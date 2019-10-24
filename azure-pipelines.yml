@@ -2,4 +2,13 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 stages:
-- template: templates/stages.yml  # Template reference
+  - stage: Hello
+    displayName: Hello
+    jobs:
+      - job: Hello
+        pool: $(pool) #works as expected and job runs on MyBuildAgent
+        continueOnError: 'false'
+       steps: # Build steps defined here
+        - script: echo Hello World.
+
+
