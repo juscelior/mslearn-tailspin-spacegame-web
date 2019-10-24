@@ -6,7 +6,6 @@ stages:
     displayName: Hello
     jobs:
       - job: Hello
-        pool: $(pool) #works as expected and job runs on MyBuildAgent
         continueOnError: 'false'
         steps: # Build steps defined here
         - script: echo 'Hello World'
